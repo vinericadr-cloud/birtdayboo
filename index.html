@@ -1,699 +1,797 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday</title>
+<meta charset="UTF-8">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', Arial, sans-serif;
+<title>Blow The Candle 🎂</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Arial,sans-serif;
+}
+
+body{
+
+    background:
+    linear-gradient(
+        rgba(9,7,12,.72),
+        rgba(9,7,12,.92)
+    ),
+    radial-gradient(
+        circle at 15% 20%,
+        rgba(255,79,184,.35),
+        transparent 28%
+    ),
+    radial-gradient(
+        circle at 85% 35%,
+        rgba(255,143,214,.30),
+        transparent 25%
+    ),
+    radial-gradient(
+        circle at 50% 85%,
+        rgba(255,79,184,.22),
+        transparent 30%
+    ),
+    #09070c;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+
+    position:relative;
+    color:white;
+}
+
+/* ========================= */
+/* LOVE BACKGROUND */
+/* ========================= */
+
+.love-pattern{
+
+    position:absolute;
+    inset:0;
+
+    opacity:.18;
+
+    background-image:
+    url("data:image/svg+xml,%3Csvg width='90' height='90' viewBox='0 0 90 90' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='18' y='48' font-size='28' fill='%23ff8fd6'%3E%E2%99%A5%3C/text%3E%3C/svg%3E");
+
+    background-size:90px 90px;
+
+    animation:loveMove 18s linear infinite;
+
+    z-index:0;
+}
+
+@keyframes loveMove{
+
+    from{
+        background-position:0 0;
     }
 
-    html {
-      scroll-behavior: smooth;
+    to{
+        background-position:180px 180px;
+    }
+}
+
+/* ========================= */
+/* STARS */
+/* ========================= */
+
+.stars{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    z-index:1;
+}
+
+.star{
+
+    position:absolute;
+
+    width:3px;
+    height:3px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.2;
+        transform:scale(1);
     }
 
-    body {
-      background: #09070c;
-      color: #ffffff;
-      overflow-x: hidden;
+    to{
+        opacity:1;
+        transform:scale(1.8);
+    }
+}
+
+/* ========================= */
+/* TITLE */
+/* ========================= */
+
+h1{
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+    text-align:center;
+
+    text-shadow:
+    0 0 10px #ff7bd5,
+    0 0 25px #ff4db8;
+
+    z-index:5;
+
+    animation:fadeUp 1.5s ease;
+}
+
+.subtitle{
+
+    font-size:16px;
+
+    opacity:.8;
+
+    margin-bottom:25px;
+
+    z-index:5;
+
+    text-align:center;
+
+    animation:fadeUp 2s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(30px);
     }
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
-      position: relative;
-      overflow: hidden;
-      background:
-        linear-gradient(rgba(9, 7, 12, 0.72), rgba(9, 7, 12, 0.92)),
-        radial-gradient(circle at 15% 20%, rgba(255, 79, 184, 0.35), transparent 28%),
-        radial-gradient(circle at 85% 35%, rgba(255, 143, 214, 0.30), transparent 25%),
-        radial-gradient(circle at 50% 85%, rgba(255, 79, 184, 0.22), transparent 30%),
-        #09070c;
-      background-attachment: fixed;
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ========================= */
+/* CAKE */
+/* ========================= */
+
+.cake-container{
+
+    position:relative;
+
+    width:300px;
+    height:350px;
+
+    z-index:5;
+}
+
+/* Plate */
+
+.plate{
+
+    position:absolute;
+
+    bottom:0;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:300px;
+    height:28px;
+
+    background:#ddd;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 20px rgba(255,255,255,.3);
+}
+
+/* Layers */
+
+.layer{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.4);
+}
+
+.layer-bottom{
+
+    width:260px;
+    height:95px;
+
+    bottom:20px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ff9ecf,
+        #ff4db8
+    );
+}
+
+.layer-middle{
+
+    width:210px;
+    height:80px;
+
+    bottom:105px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ffd166,
+        #ffb703
+    );
+}
+
+.layer-top{
+
+    width:160px;
+    height:65px;
+
+    bottom:175px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #d291ff,
+        #9d4edd
+    );
+}
+
+/* Cream */
+
+.cream{
+
+    position:absolute;
+
+    top:-10px;
+
+    width:100%;
+    height:22px;
+
+    background:white;
+
+    border-radius:50%;
+}
+
+/* Drip */
+
+.drip{
+
+    position:absolute;
+
+    width:18px;
+
+    background:white;
+
+    border-radius:10px;
+}
+
+.drip1{
+    height:30px;
+    left:25px;
+    top:10px;
+}
+
+.drip2{
+    height:25px;
+    right:40px;
+    top:15px;
+}
+
+.drip3{
+    height:28px;
+    left:95px;
+    top:12px;
+}
+
+/* ========================= */
+/* CANDLE */
+/* ========================= */
+
+.candle{
+
+    position:absolute;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    bottom:235px;
+
+    width:16px;
+    height:70px;
+
+    border-radius:10px;
+
+    background:
+    repeating-linear-gradient(
+        45deg,
+        white,
+        white 5px,
+        #ff4d6d 5px,
+        #ff4d6d 10px
+    );
+}
+
+/* Flame */
+
+.flame{
+
+    position:absolute;
+
+    top:-35px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:28px;
+    height:35px;
+
+    background:
+    radial-gradient(
+        circle,
+        #fff176 10%,
+        orange 60%,
+        transparent 80%
+    );
+
+    border-radius:50%;
+
+    animation:flicker .08s infinite alternate;
+
+    filter:
+    drop-shadow(0 0 15px gold)
+    drop-shadow(0 0 30px orange);
+}
+
+@keyframes flicker{
+
+    from{
+        transform:translateX(-50%) scale(1);
     }
 
-    .love-pattern {
-      position: absolute;
-      inset: 0;
-      opacity: 0.18;
-      background-image:
-        url("data:image/svg+xml,%3Csvg width='90' height='90' viewBox='0 0 90 90' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='18' y='48' font-size='28' fill='%23ff8fd6'%3E%E2%99%A5%3C/text%3E%3C/svg%3E");
-      background-size: 90px 90px;
-      animation: loveMove 18s linear infinite;
-      z-index: 0;
+    to{
+        transform:translateX(-50%) scale(1.1) rotate(2deg);
+    }
+}
+
+/* ========================= */
+/* BUTTON */
+/* ========================= */
+
+button{
+
+    margin-top:20px;
+
+    padding:14px 30px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:
+    linear-gradient(
+        to right,
+        #ff4db8,
+        #ff7bd5
+    );
+
+    color:white;
+
+    font-size:18px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 5px 20px rgba(255,77,184,.4);
+
+    transition:.3s;
+
+    z-index:10;
+}
+
+button:active{
+    transform:scale(.96);
+}
+
+/* ========================= */
+/* MESSAGE */
+/* ========================= */
+
+.message{
+
+    margin-top:25px;
+
+    font-size:34px;
+
+    text-align:center;
+
+    opacity:0;
+
+    transition:1s;
+
+    text-shadow:
+    0 0 20px white;
+
+    z-index:5;
+}
+
+.message.show{
+    opacity:1;
+}
+
+/* ========================= */
+/* SMOKE */
+/* ========================= */
+
+.smoke{
+
+    position:absolute;
+
+    width:20px;
+    height:20px;
+
+    background:
+    rgba(220,220,220,.7);
+
+    border-radius:50%;
+
+    animation:smoke 2s forwards;
+}
+
+@keyframes smoke{
+
+    0%{
+        opacity:1;
+        transform:
+        translateY(0)
+        scale(1);
     }
 
-    .floating-heart {
-      position: absolute;
-      width: 22px;
-      height: 22px;
-      background: #ff4fb8;
-      transform: rotate(45deg);
-      opacity: 0.75;
-      filter: drop-shadow(0 0 18px rgba(255, 79, 184, 0.8));
-      animation: floatHeart 6s ease-in-out infinite;
-      z-index: 0;
+    100%{
+        opacity:0;
+        transform:
+        translateY(-120px)
+        scale(3);
+    }
+}
+
+/* ========================= */
+/* CONFETTI */
+/* ========================= */
+
+.confetti{
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    top:-20px;
+
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+
+    to{
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+    }
+}
+
+/* ========================= */
+/* TRANSITION */
+/* ========================= */
+
+.fade-out{
+    animation:fadeOut 2s forwards;
+}
+
+@keyframes fadeOut{
+
+    to{
+        opacity:0;
+        transform:scale(1.1);
+    }
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media(max-width:480px){
+
+    h1{
+        font-size:30px;
     }
 
-    .floating-heart::before,
-    .floating-heart::after {
-      content: '';
-      position: absolute;
-      width: 22px;
-      height: 22px;
-      background: #ff4fb8;
-      border-radius: 50%;
+    .subtitle{
+        font-size:14px;
+        padding:0 15px;
     }
 
-    .floating-heart::before {
-      top: -11px;
-      left: 0;
+    .cake-container{
+        transform:scale(.9);
     }
 
-    .floating-heart::after {
-      top: 0;
-      left: -11px;
+    button{
+        font-size:16px;
+        padding:12px 24px;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 850px;
-      animation: fadeUp 1.2s ease forwards;
+    .message{
+        font-size:28px;
     }
+}
 
-    .badge {
-      display: inline-block;
-      padding: 10px 22px;
-      border: 1px solid rgba(255, 143, 214, 0.55);
-      border-radius: 999px;
-      color: #ffb8e6;
-      background: rgba(255, 79, 184, 0.1);
-      font-size: 0.95rem;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-      backdrop-filter: blur(10px);
-    }
-
-    h1 {
-      font-size: clamp(2.5rem, 8vw, 6.8rem);
-      line-height: 1;
-      margin-bottom: 20px;
-      background: linear-gradient(135deg, #ffffff, #ff8fd6, #ff4fb8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .name {
-      color: #ff8fd6;
-      text-shadow: 0 0 25px rgba(255, 79, 184, 0.65);
-    }
-
-    .hero-text {
-      font-size: clamp(1rem, 3vw, 1.35rem);
-      color: #f6d8ea;
-      margin-bottom: 32px;
-      line-height: 1.7;
-    }
-
-    .cake-wrap {
-      width: 210px;
-      height: 210px;
-      margin: 0 auto 34px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 20px 80px rgba(255, 79, 184, 0.25);
-      backdrop-filter: blur(12px);
-      animation: floatCake 3s ease-in-out infinite;
-    }
-
-    .cake-wrap img {
-      width: 150px;
-      max-width: 80%;
-      filter: drop-shadow(0 18px 25px rgba(255, 79, 184, 0.35));
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 30px;
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #ff4fb8, #ff8fd6);
-      box-shadow: 0 12px 40px rgba(255, 79, 184, 0.35);
-      transition: 0.3s ease;
-      font-weight: 600;
-    }
-
-    .btn:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 18px 55px rgba(255, 79, 184, 0.55);
-    }
-
-    section {
-      padding: 90px 20px;
-    }
-
-    .container {
-      width: min(1120px, 100%);
-      margin: auto;
-    }
-
-    .wish-section {
-      position: relative;
-      background:
-        linear-gradient(rgba(9, 7, 12, 0.9), rgba(9, 7, 12, 0.95)),
-        radial-gradient(circle at 20% 20%, rgba(255, 79, 184, 0.25), transparent 30%),
-        #09070c;
-      background-attachment: fixed;
-    }
-
-    .wish-card {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 30px;
-      padding: clamp(28px, 5vw, 56px);
-      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(15px);
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      margin-bottom: 22px;
-      color: #ff8fd6;
-    }
-
-    .wish-card p {
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      color: #f5d7e9;
-      line-height: 1.9;
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .parallax-divider {
-      height: 260px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background:
-        linear-gradient(rgba(9, 7, 12, 0.35), rgba(9, 7, 12, 0.85)),
-        radial-gradient(circle at 50% 50%, rgba(255, 79, 184, 0.35), transparent 35%),
-        #09070c;
-      background-attachment: fixed;
-    }
-
-    .parallax-divider::before {
-      content: '♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥ ♥';
-      position: absolute;
-      inset: 0;
-      color: rgba(255, 143, 214, 0.16);
-      font-size: 42px;
-      letter-spacing: 18px;
-      line-height: 90px;
-      transform: rotate(-8deg) scale(1.2);
-      animation: loveMove 20s linear infinite;
-    }
-
-    .parallax-divider h2 {
-      position: relative;
-      z-index: 1;
-      font-size: clamp(2rem, 6vw, 4rem);
-      color: #ffffff;
-      text-shadow: 0 0 28px rgba(255, 79, 184, 0.9);
-    }
-
-    .gallery-section {
-      background: #0d0912;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .gallery-section::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      opacity: 0.11;
-      background-image:
-        url("data:image/svg+xml,%3Csvg width='110' height='110' viewBox='0 0 110 110' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='28' y='60' font-size='34' fill='%23ff8fd6'%3E%E2%99%A5%3C/text%3E%3C/svg%3E");
-      background-size: 110px 110px;
-      pointer-events: none;
-    }
-
-    .gallery-header {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .gallery-header p {
-      color: #cdb8c7;
-      margin-top: 10px;
-      font-size: 1rem;
-    }
-
-    .gallery-wrap {
-      position: relative;
-      z-index: 1;
-    }
-
-    .gallery {
-      display: flex;
-      gap: 28px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-      padding: 70px max(40px, calc((100vw - 320px) / 2)) 80px;
-      scrollbar-width: thin;
-      scrollbar-color: #ff4fb8 #1a0f1f;
-      perspective: 1000px;
-    }
-
-    .gallery::-webkit-scrollbar {
-      height: 8px;
-    }
-
-    .gallery::-webkit-scrollbar-thumb {
-      background: #ff4fb8;
-      border-radius: 10px;
-    }
-
-    .gallery::-webkit-scrollbar-track {
-      background: #1a0f1f;
-    }
-
-    .photo-card {
-      flex: 0 0 280px;
-      height: 360px;
-      scroll-snap-align: center;
-      border-radius: 28px;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.42);
-      transition: 0.45s ease;
-      transform: scale(0.82) translateY(10px);
-      opacity: 0.48;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .photo-card.active {
-      transform: scale(1.12) translateY(-12px);
-      opacity: 1;
-      z-index: 3;
-      box-shadow: 0 30px 90px rgba(255, 79, 184, 0.33);
-      border-color: rgba(255, 143, 214, 0.55);
-    }
-
-    .photo-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      background: radial-gradient(circle, rgba(255, 79, 184, 0.18), rgba(0, 0, 0, 0.88));
-      padding: 10px;
-      display: block;
-    }
-
-    .photo-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      color: #ffb8e6;
-      text-align: center;
-      padding: 16px;
-      background: linear-gradient(135deg, rgba(255, 79, 184, 0.22), rgba(255, 255, 255, 0.06));
-    }
-
-    .photo-placeholder span {
-      font-size: 2rem;
-    }
-
-    .photo-placeholder small {
-      color: #dbc3d3;
-      font-size: 0.85rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 34px 20px;
-      color: #cdb8c7;
-      background: #09070c;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(35px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes floatCake {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-14px); }
-    }
-
-    @keyframes loveMove {
-      from { background-position: 0 0; }
-      to { background-position: 180px 180px; }
-    }
-
-    @keyframes floatHeart {
-      0%, 100% { transform: translateY(0) rotate(45deg) scale(1); }
-      50% { transform: translateY(-26px) rotate(45deg) scale(1.15); }
-    }
-
-    @media (max-width: 768px) {
-      .hero,
-      .wish-section,
-      .parallax-divider {
-        background-attachment: scroll;
-      }
-
-      .hero {
-        min-height: 100svh;
-        padding: 36px 18px;
-      }
-
-      h1 {
-        font-size: clamp(2.3rem, 12vw, 4.2rem);
-      }
-
-      .hero-text {
-        font-size: 1rem;
-        line-height: 1.65;
-      }
-
-      section {
-        padding: 64px 16px;
-      }
-
-      .cake-wrap {
-        width: 165px;
-        height: 165px;
-        margin-bottom: 28px;
-      }
-
-      .cake-wrap img {
-        width: 118px;
-      }
-
-      .wish-card {
-        border-radius: 24px;
-        padding: 28px 20px;
-      }
-
-      .wish-card p {
-        font-size: 0.98rem;
-        line-height: 1.75;
-      }
-
-      .parallax-divider {
-        height: 200px;
-      }
-
-      .gallery-header {
-        margin-bottom: 16px;
-      }
-
-      .gallery-header p {
-        font-size: 0.9rem;
-        padding: 0 10px;
-      }
-
-      .gallery {
-        gap: 18px;
-        padding: 50px max(22px, calc((100vw - 235px) / 2)) 68px;
-        scroll-padding-left: max(22px, calc((100vw - 235px) / 2));
-        scroll-padding-right: max(22px, calc((100vw - 235px) / 2));
-      }
-
-      .photo-card {
-        flex: 0 0 235px;
-        height: 330px;
-        border-radius: 24px;
-        transform: scale(0.84) translateY(8px);
-      }
-
-      .photo-card.active {
-        transform: scale(1.06) translateY(-8px);
-      }
-
-      .photo-card img {
-        padding: 8px;
-      }
-
-      .floating-heart {
-        width: 16px;
-        height: 16px;
-      }
-
-      .floating-heart::before,
-      .floating-heart::after {
-        width: 16px;
-        height: 16px;
-      }
-
-      .floating-heart::before {
-        top: -8px;
-      }
-
-      .floating-heart::after {
-        left: -8px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .badge {
-        font-size: 0.78rem;
-        padding: 9px 18px;
-      }
-
-      .section-title {
-        font-size: clamp(1.9rem, 9vw, 2.7rem);
-      }
-
-      .gallery {
-        gap: 16px;
-        padding-left: max(18px, calc((100vw - 225px) / 2));
-        padding-right: max(18px, calc((100vw - 225px) / 2));
-        scroll-padding-left: max(18px, calc((100vw - 225px) / 2));
-        scroll-padding-right: max(18px, calc((100vw - 225px) / 2));
-      }
-
-      .photo-card {
-        flex: 0 0 225px;
-        height: 315px;
-      }
-
-      footer {
-        font-size: 0.9rem;
-      }
-    }
-
-    /* Optimasi khusus ukuran umum HP Samsung Galaxy: 360px - 414px */
-    @media (min-width: 360px) and (max-width: 414px) {
-      .hero {
-        padding: 34px 16px;
-      }
-
-      h1 {
-        font-size: clamp(2.35rem, 11.5vw, 3.6rem);
-      }
-
-      .cake-wrap {
-        width: 155px;
-        height: 155px;
-      }
-
-      .cake-wrap img {
-        width: 112px;
-      }
-
-      .gallery {
-        padding-top: 52px;
-        padding-bottom: 72px;
-        padding-left: calc((100vw - 220px) / 2);
-        padding-right: calc((100vw - 220px) / 2);
-        scroll-padding-left: calc((100vw - 220px) / 2);
-        scroll-padding-right: calc((100vw - 220px) / 2);
-      }
-
-      .photo-card {
-        flex-basis: 220px;
-        height: 315px;
-      }
-
-      .photo-card.active {
-        transform: scale(1.07) translateY(-8px);
-      }
-    }
-  </style>
+</style>
 </head>
+
 <body>
 
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <div class="love-pattern"></div>
-    <div class="floating-heart" style="top:18%; left:10%;"></div>
-    <div class="floating-heart" style="top:62%; left:20%; animation-delay:1s;"></div>
-    <div class="floating-heart" style="top:38%; right:14%; animation-delay:2s;"></div>
-    <div class="floating-heart" style="bottom:18%; right:24%; animation-delay:3s;"></div>
+<div class="love-pattern"></div>
 
-    <div class="hero-content">
-      <div class="badge">Special Birthday Website</div>
+<div class="stars" id="stars"></div>
 
-      <!-- GANTI NAMA DI SINI -->
-      <h1>Happy Birthday<br><span class="name">Siwi Widyawati</span></h1>
+<h1>🎂 Make A Wish 🎂</h1>
 
-      <div class="cake-wrap">
-        <!-- Ganti gambar kue di folder images/cake.png -->
-        <img src="images/cake.png" alt="Birthday Cake" />
-      </div>
+<div class="cake-container">
 
-      <p class="hero-text">
-        Hari ini adalah hari spesial untuk merayakan seseorang yang begitu berarti.
-      </p>
-
-      <a href="#wish" class="btn">Lihat Ucapan</a>
-    </div>
-  </header>
-
-  <!-- UCAPAN SECTION -->
-  <section class="wish-section" id="wish">
-    <div class="container">
-      <div class="wish-card">
-        <h2 class="section-title">Ucapan Spesial</h2>
-        <p>
-          Selamat ulang tahun! Semoga di hari yang indah ini kamu selalu dikelilingi kebahagiaan, cinta, dan orang-orang yang tulus menyayangimu. Semoga setiap langkahmu dipenuhi berkat, setiap impianmu semakin dekat untuk tercapai, dan setiap hari yang kamu jalani membawa cerita baru yang indah. Tetaplah menjadi pribadi yang kuat, ceria, dan membawa warna bagi banyak orang.
-        </p>
-        <br>
-        <br>
-        <p>
-          Kakak ~ Boo ~ Bibub
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALERI FOTO SECTION -->
-  <section class="gallery-section" id="gallery">
-    <div class="container">
-      <div class="gallery-header">
-        <h2 class="section-title">Beautiful Moments</h2>
-        <br>
-        <p> Swipe >>> </p>
-        <br>
-      </div>
+    <!-- Candle -->
+    <div class="candle">
+        <div class="flame" id="flame"></div>
     </div>
 
-    <div class="gallery-wrap">
-      <div class="gallery" id="gallerySlider">
-        <!-- Cara pakai: simpan foto di folder images, lalu ganti src="images/foto1.jpg" -->
-
-        <div class="photo-card active"><img src="images/foto1.png" alt="Foto 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 1</strong><small>images/foto1.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto2.jpeg" alt="Foto 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 2</strong><small>images/foto2.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto3.jpeg" alt="Foto 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 3</strong><small>images/foto3.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto4.jpeg" alt="Foto 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 4</strong><small>images/foto4.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto5.jpeg" alt="Foto 5" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 5</strong><small>images/foto5.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto6.jpeg" alt="Foto 6" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 6</strong><small>images/foto6.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto7.jpeg" alt="Foto 7" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 7</strong><small>images/foto7.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto8.jpeg" alt="Foto 8" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 8</strong><small>images/foto8.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto8.1.png" alt="Foto 9" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 9</strong><small>images/foto9.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto9.jpeg" alt="Foto 10" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 10</strong><small>images/foto10.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto10.jpeg" alt="Foto 11" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 11</strong><small>images/foto11.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto11.jpeg" alt="Foto 12" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 12</strong><small>images/foto12.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto12.jpeg" alt="Foto 13" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 13</strong><small>images/foto13.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto13.jpeg" alt="Foto 14" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 14</strong><small>images/foto14.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto14.jpeg" alt="Foto 15" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 15</strong><small>images/foto15.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto15.jpeg" alt="Foto 16" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 16</strong><small>images/foto16.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto16.jpeg" alt="Foto 17" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 17</strong><small>images/foto17.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto17.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto19.jpeg" alt="Foto 18" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 18</strong><small>images/foto18.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto20.jpeg" alt="Foto 19" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 19</strong><small>images/foto19.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto21.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto22.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto24.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto25.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto26.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto27.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto28.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto29.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto30.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto31.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto32.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto33.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto34.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto35.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto36.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto37.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto38.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto39.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto40.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto41.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto42.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto43.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
-        <div class="photo-card"><img src="images/foto44.jpeg" alt="Foto 20" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"><div class="photo-placeholder" style="display:none;"><span>📷</span><strong>Foto 20</strong><small>images/foto20.jpg</small></div></div>
+    <!-- Top Layer -->
+    <div class="layer layer-top">
+        <div class="cream"></div>
+        <div class="drip drip1"></div>
+        <div class="drip drip2"></div>
     </div>
-  </section>
 
-  <footer>
-    Made with love for a special birthday 💗
-  </footer>
+    <!-- Middle Layer -->
+    <div class="layer layer-middle">
+        <div class="cream"></div>
+        <div class="drip drip1"></div>
+        <div class="drip drip3"></div>
+    </div>
 
-  <script>
-    const slider = document.getElementById('gallerySlider');
-    const cards = document.querySelectorAll('.photo-card');
+    <!-- Bottom Layer -->
+    <div class="layer layer-bottom">
+        <div class="cream"></div>
+        <div class="drip drip2"></div>
+        <div class="drip drip3"></div>
+    </div>
 
-    function setActiveCard() {
-      const sliderCenter = slider.scrollLeft + slider.offsetWidth / 2;
-      let closestCard = cards[0];
-      let closestDistance = Infinity;
+    <!-- Plate -->
+    <div class="plate"></div>
 
-      cards.forEach(card => {
-        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-        const distance = Math.abs(sliderCenter - cardCenter);
+</div>
 
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestCard = card;
-        }
-      });
+<button onclick="startMic()">
+🎤 Tiup Lilin
+</button>
 
-      cards.forEach(card => card.classList.remove('active'));
-      closestCard.classList.add('active');
+<div class="message" id="message">
+🎉 Happy Birthday 🎉
+</div>
+
+<script>
+
+/* ========================= */
+/* STARS */
+/* ========================= */
+
+const starsContainer =
+document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+    const star =
+    document.createElement("div");
+
+    star.classList.add("star");
+
+    star.style.left =
+    Math.random()*100 + "%";
+
+    star.style.top =
+    Math.random()*100 + "%";
+
+    star.style.animationDuration =
+    (Math.random()*3+1)+"s";
+
+    starsContainer.appendChild(star);
+}
+
+/* ========================= */
+/* CONFETTI */
+/* ========================= */
+
+function createConfetti(){
+
+    for(let i=0;i<180;i++){
+
+        const confetti =
+        document.createElement("div");
+
+        confetti.classList.add("confetti");
+
+        confetti.style.left =
+        Math.random()*100 + "vw";
+
+        confetti.style.background =
+        `hsl(${Math.random()*360},100%,50%)`;
+
+        confetti.style.animationDuration =
+        (Math.random()*3+2)+"s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(()=>{
+            confetti.remove();
+        },5000);
     }
+}
 
-    slider.addEventListener('scroll', () => {
-      window.requestAnimationFrame(setActiveCard);
-    });
+/* ========================= */
+/* SMOKE */
+/* ========================= */
 
-    window.addEventListener('load', setActiveCard);
-    window.addEventListener('resize', setActiveCard);
-  </script>
+function createSmoke(){
+
+    const candle =
+    document.querySelector(".candle");
+
+    for(let i=0;i<10;i++){
+
+        const smoke =
+        document.createElement("div");
+
+        smoke.classList.add("smoke");
+
+        smoke.style.left =
+        (Math.random()*20-10)+"px";
+
+        smoke.style.top = "-20px";
+
+        candle.appendChild(smoke);
+
+        setTimeout(()=>{
+            smoke.remove();
+        },2000);
+    }
+}
+
+/* ========================= */
+/* MICROPHONE */
+/* ========================= */
+
+async function startMic(){
+
+    try{
+
+        const stream =
+        await navigator.mediaDevices.getUserMedia({
+            audio:true
+        });
+
+        const audioContext =
+        new (
+            window.AudioContext ||
+            window.webkitAudioContext
+        )();
+
+        const analyser =
+        audioContext.createAnalyser();
+
+        const microphone =
+        audioContext.createMediaStreamSource(stream);
+
+        microphone.connect(analyser);
+
+        analyser.fftSize = 256;
+
+        const dataArray =
+        new Uint8Array(
+            analyser.frequencyBinCount
+        );
+
+        function detectBlow(){
+
+            analyser.getByteFrequencyData(dataArray);
+
+            let volume =
+            dataArray.reduce((a,b)=>a+b)
+            / dataArray.length;
+
+            if(volume > 45){
+
+                const flame =
+                document.getElementById("flame");
+
+                if(flame){
+
+                    flame.remove();
+
+                    createSmoke();
+
+                    createConfetti();
+
+                    document
+                    .getElementById("message")
+                    .classList.add("show");
+
+                    document.body
+                    .classList.add("fade-out");
+
+                    setTimeout(()=>{
+
+                        window.location.href =
+                        "home.html";
+
+                    },4000);
+                }
+            }
+
+            requestAnimationFrame(detectBlow);
+        }
+
+        detectBlow();
+
+    }catch(err){
+
+        alert(
+        "Please allow microphone access 🎤"
+        );
+
+        console.log(err);
+    }
+}
+
+</script>
 
 </body>
 </html>
